@@ -1,0 +1,5 @@
+__pycache__
+migrations
+.vscode
+package.json
+db.sqlite3
