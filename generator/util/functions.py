@@ -1,13 +1,3 @@
-def openFile(path: str):
-    """
-    We're only ever using UTF-8 files in this project,
-    so set it in here and just use this everywhere.
-    Args:
-        path (str): the file path to open
-    """
-    return open(path, encoding="utf-8")
-
-
 def fetchAlphabet():
     """
     Go through `alphabet.txt` (in this directory)
