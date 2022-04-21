@@ -7,11 +7,13 @@
 {% endblock css %}
 
 {% block content %}
-	{% for line in art %} {% for char in line %}
-		<span class="{% if char == '#' %} fg {% else %} bg {% endif %}">
-			{{char}}
-		</span>
-	{% endfor %}
-		<br />
-	{% endfor %}
+	<div class="art">
+		{% for line in art %} {% for char in line %}
+			<span class="{% if char == '#' %} fg {% else %} bg {% endif %}">
+				{{char}}
+			</span>
+		{% endfor %}
+			<br />
+		{% endfor %}
+	</div>
 {% endblock content %}
