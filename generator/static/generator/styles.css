@@ -7,5 +7,20 @@
 }
 
 .art {
+  background-color: #ffffff06;
+  border-radius: 7px;
+  padding: 20px;
+  padding-bottom: 0;
+  box-shadow: 0 2px 8px #ffffff31;
   font-family: monospace;
+}
+
+.art p {
+  display: block;
+  padding: 10px 0;
+  font-size: 1rem;
+  text-align: center;
+  color: honeydew;
+  font-family: sans-serif;
+  font-style: italic;
 }
