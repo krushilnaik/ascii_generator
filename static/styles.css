@@ -10,7 +10,7 @@ html {
 
 body {
   display: grid;
-  grid-template-rows: 3em 1fr;
+  grid-template-rows: auto 1fr;
   width: 100vw;
   height: 100vh;
   background-color: #202020;
@@ -21,13 +21,4 @@ main {
   height: 100%;
   display: grid;
   place-content: center;
-}
-
-header {
-  text-align: center;
-  color: honeydew;
-  font-size: 36px;
-  padding: 7px;
-  font-family: sans-serif;
-  text-transform: lowercase;
 }
