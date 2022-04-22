@@ -14,7 +14,16 @@ header > * {
 .logo {
   position: relative;
   font-size: 96px;
-  color: red;
+  background: linear-gradient(
+    132deg,
+    rgb(250, 170, 0) 0%,
+    rgb(237, 19, 19) 50%,
+    rgb(213, 74, 255) 100%
+  );
+  line-height: 1em;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .logo::before {
