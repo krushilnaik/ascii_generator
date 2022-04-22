@@ -21,6 +21,14 @@
 
     <main>
 			<div class="wrapper">{% block content %}{% endblock content %}</div>
+
+      <form method="POST">
+        {% csrf_token %}
+
+        {{ form }}
+
+        <button type="submit" id="submit" aria-label="Submit">x</button>
+      </form>
 		</main>
   </body>
 </html>
