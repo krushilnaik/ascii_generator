@@ -1,43 +1,28 @@
 from django.core.management.base import BaseCommand
 from ascii_generator.models import Letter
 from pathlib import Path
-import logging
 
-logging.basicConfig(
-    level=logging.DEBUG,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
-# python manage.py seed --mode=refresh
-
-""" Clear all data and creates addresses """
-# MODE_REFRESH = 'refresh'
-
-""" Clear all data and do not create any object """
-# MODE_CLEAR = 'clear'
+from util.custom_logging import debug, info, warning
 
 
 class Command(BaseCommand):
-    help = "seed database for testing and development."
-
-    # def add_arguments(self, parser):
-    #     parser.add_argument('--mode', type=str, help="Mode")
-
     def handle(self, *args, **options):
-        self.stdout.write('seeding data...')
+        info('Seeding database...')
 
         run_seed()
 
-        self.stdout.write('done.')
+        info('Done.')
 
 
 def clear_data():
     """Deletes all the table data"""
 
-    logging.debug("Clearing database...")
+    info("Clearing database...")
     Letter.objects.all().delete()
 
 
 def run_seed():
+    """Seed the database"""
     clear_data()
 
     ALPHABET_FILE = Path(__file__).parent / "alphabet.txt"
@@ -60,11 +45,9 @@ def run_seed():
 
                         temp.save()
 
-                        logging.debug(f"Added '{letter}' to database")
+                        debug(f"Added '{letter}' to database")
                     except:
-                        logging.warning(
-                            f"Failed to add '{letter}' to database"
-                        )
+                        warning(f"Failed to add '{letter}' to database")
 
                 # gets the second half of the line, without the quotes
                 # e.g. 33 '!' -> !
