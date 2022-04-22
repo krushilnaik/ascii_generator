@@ -19,6 +19,48 @@ body {
 main {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 30vh 0;
+}
+
+form {
+  display: flex;
+  background-color: white;
+  width: fit-content;
+  margin: auto;
+  border-radius: 999px;
+  font-size: 1.25rem;
+}
+
+form input {
+  background-color: transparent;
+  border-radius: 999px 0 0 999px;
+  border: none;
+  width: 20rem;
+  font-size: inherit;
+  padding: 0 15px;
+}
+
+form button {
+  width: 48px;
+  height: 48px;
   display: grid;
   place-content: center;
+  border-radius: 999px;
+  border: none;
+  font-size: inherit;
+  box-shadow: 0 0 5px black;
+  transition: background-color 300ms;
+  cursor: pointer;
+  background-color: #1e90ff;
+}
+
+form button:hover {
+  background-color: #5eaeff;
+}
+
+button i {
+  font-size: inherit;
 }
