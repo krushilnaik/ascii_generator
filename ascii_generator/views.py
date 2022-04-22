@@ -3,16 +3,6 @@ from .forms import ArtForm
 from django.shortcuts import render
 from util.custom_logging import debug, critical
 
-# logging.basicConfig(
-#     level=logging.DEBUG,
-#     format='[%(asctime)s] - %(levelname)s - %(message)s',
-#     datefmt="%d/%b/%Y %H:%M:%S"
-# )
-
-# DEBUG = "\x1b[33;20m"
-# ERROR = "\x1b[31;20m"
-# RESET = "\x1b[0m"
-
 
 def index(request):
     art = [
