@@ -9,8 +9,12 @@
 {% block content %}
 	<div class="art">
 		{% for line in art %} {% for char in line %}
-			<span class="{% if char == '#' %} fg {% else %} bg {% endif %}">
-				{{char}}
+			<span class="{% if char == '#' or error %} fg {% else %} bg {% endif %}">
+				{% if char == " " %}
+					&nbsp;
+				{% else %}
+					{{char}}
+				{% endif %}
 			</span>
 		{% endfor %}
 			<br />

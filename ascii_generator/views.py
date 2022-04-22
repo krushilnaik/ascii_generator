@@ -10,7 +10,7 @@ logging.basicConfig(
 
 
 def index(request):
-    response = [
+    art = [
         "..................",
         "#...#..###...###..",
         "#...#.#...#.#.....",
@@ -32,20 +32,27 @@ def index(request):
             for letter in form.cleaned_data["text"]:
                 try:
                     char = Letter.objects.get(letter=letter)
+                    logging.debug(
+                        f"Successfully retrieved ASCII art for '{letter}'"
+                    )
                 except:
-                    logging.error(f"Unsupported character '{letter}'")
+                    logging.critical(f"Unsupported character '{letter}'")
+
+                    return render(request, "generator/home.html", {
+                        "art": [f"Unsupported character '{letter}'"],
+                        "form": form,
+                        "error": True
+                    })
                 letters.append(char.representation.split("|"))
 
             art = ["".join(line) for line in zip(*letters)]
-
-            return render(request, 'generator/home.html', {"art": art, "form": form})
         else:
-            logging.error("Invalid form data")
+            logging.critical("Invalid form data")
     else:
         # if a GET (or any other method) we'll create a blank form
         form = ArtForm()
 
     return render(request, "generator/home.html", {
-        "art": response,
+        "art": art,
         "form": form
     })
