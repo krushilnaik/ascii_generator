@@ -2,8 +2,30 @@ header {
   text-align: center;
   color: honeydew;
   font-size: 36px;
-  padding: 7px;
   background-color: #292e32;
-  font-family: sans-serif;
+  font-family: monospace;
   text-transform: lowercase;
+}
+
+header > * {
+  vertical-align: middle;
+}
+
+.logo {
+  position: relative;
+  font-size: 96px;
+  color: red;
+}
+
+.logo::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background-color: white;
+  position: absolute;
+  border-radius: 999px;
+  color: honeydew;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
