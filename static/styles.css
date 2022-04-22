@@ -27,24 +27,20 @@ main {
 
 form {
   display: flex;
-  background-color: crimson;
+  background-color: white;
   width: fit-content;
   margin: auto;
   border-radius: 999px;
-  font-size: 28px;
+  font-size: 1.25rem;
 }
 
 form input {
   background-color: transparent;
   border-radius: 999px 0 0 999px;
   border: none;
-  color: honeydew;
+  width: 20rem;
   font-size: inherit;
   padding: 0 15px;
-}
-
-input::placeholder {
-  color: #aeaeae;
 }
 
 form button {
@@ -56,4 +52,15 @@ form button {
   border: none;
   font-size: inherit;
   box-shadow: 0 0 5px black;
+  transition: background-color 300ms;
+  cursor: pointer;
+  background-color: #1e90ff;
+}
+
+form button:hover {
+  background-color: #5eaeff;
+}
+
+button i {
+  font-size: inherit;
 }

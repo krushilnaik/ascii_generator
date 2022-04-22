@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}">
     <link rel="stylesheet" href="{% static 'generator/includes/header.css' %}">
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     {% block css %}{% endblock css %}
 
@@ -27,7 +34,9 @@
 
         {{ form }}
 
-        <button type="submit" id="submit" aria-label="Submit">x</button>
+        <button type="submit" id="submit" aria-label="Submit">
+          <i class="fa-solid fa-pen"></i>
+        </button>
       </form>
 		</main>
   </body>
