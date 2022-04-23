@@ -27,7 +27,7 @@ def index(request):
                     char = Letter.objects.get(letter=letter)
                     debug(f"Successfully retrieved ASCII art for '{letter}'")
                 except:
-                    critical(f"Unsupported character '{letter}'")
+                    debug(f"Unsupported character '{letter}'")
 
                     return render(request, "generator/home.html", {
                         "art": [f"Unsupported character '{letter}'"],
@@ -39,7 +39,7 @@ def index(request):
 
             art = ["".join(line) for line in zip(*letters)]
         else:
-            critical("Invalid form data")
+            debug("Invalid form data")
     else:
         # if this is not a POST request, initialize a blank form
         form = ArtForm()

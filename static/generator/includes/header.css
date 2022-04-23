@@ -1,40 +1,42 @@
 header {
+  display: flex;
+  margin: auto;
+  border: dotted 1px white;
+  align-items: center;
+  gap: 10px;
   text-align: center;
   color: honeydew;
   font-size: 36px;
-  background-color: #292e32;
   font-family: monospace;
   text-transform: lowercase;
 }
 
-header > * {
-  vertical-align: middle;
-}
-
 .logo {
+  display: inline-block;
   position: relative;
-  font-size: 96px;
+  font-size: 65px;
   background: linear-gradient(
     132deg,
     rgb(250, 170, 0) 0%,
     rgb(237, 19, 19) 50%,
     rgb(213, 74, 255) 100%
   );
+  height: 1em;
   line-height: 1em;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.logo::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  background-color: white;
+header::after {
   position: absolute;
-  border-radius: 999px;
-  color: honeydew;
-  top: 50%;
+  content: "";
+  font-size: inherit;
+  width: 10em;
+  height: 8px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+  background-color: #bfcad376;
+  z-index: -1;
 }
