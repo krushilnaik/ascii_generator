@@ -16,11 +16,9 @@ def index(request):
     ]
 
     if request.method == 'POST':
-        # if this is a POST request
-        # create a pre-populated form:
+        # if this is a POST request, pre-populate the form
         form = ArtForm(request.POST)
 
-        # check whether it's valid
         if form.is_valid():
             letters = []
 
@@ -36,13 +34,14 @@ def index(request):
                         "form": form,
                         "error": True
                     })
+
                 letters.append(char.representation.split("|"))
 
             art = ["".join(line) for line in zip(*letters)]
         else:
             critical("Invalid form data")
     else:
-        # if a GET (or any other method) we'll create a blank form
+        # if this is not a POST request, initialize a blank form
         form = ArtForm()
 
     return render(request, "generator/home.html", {
